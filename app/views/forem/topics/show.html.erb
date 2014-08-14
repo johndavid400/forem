@@ -2,28 +2,28 @@
   <%= render :partial => 'forem/topics/head', :locals => { :topic => @topic } %>
 
   <div id='menu'>
-    <div class='btn-group'>
+    <ul class='btn-group'>
       <% if @topic.can_be_replied_to? && can?(:reply, @topic) %>
-        <%= link_to t(".reply"), forem.new_forum_topic_post_path(@forum, @topic), :class => "btn btn-primary " %>
+        <li><%= link_to t(".reply"), forem.new_forum_topic_post_path(@forum, @topic), :class => "btn btn-primary " %></li>
       <% end %>
       <% if @topic.user == forem_user || forem_admin? %>
-        <%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger" %>
+        <li><%= link_to t(".delete"), forem.forum_topic_path(@forum, @topic), :method => :delete, data: { :confirm => t("are_you_sure") }, :class => "btn btn-danger" %></li>
       <% end %>
       <% if forem_user %>
         <% if !@topic.subscriber?(forem_user.id) %>
-          <%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic), :method => :post, :class => "btn btn-success" %>
+          <li><%= link_to t(".subscribe"), forem.subscribe_forum_topic_path(@forum, @topic), :method => :post, :class => "btn btn-success" %></li>
         <% else %>
-          <%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic), :method => :post, :class => "btn btn-danger" %>
+          <li><%= link_to t(".unsubscribe"), forem.unsubscribe_forum_topic_path(@forum, @topic), :method => :post, :class => "btn btn-danger" %></li>
         <% end %>
       <% end %>
-    </div>
+    </ul>
     <% if forem_admin? %>
-      <div class='btn-group'>
-        <%= link_to t('forem.topic.links.edit'), forem.edit_admin_forum_topic_path(@forum, @topic), :class => "btn" %>
-        <%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %>
-        <%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %>
-        <%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %>
-      </div>
+      <ul class='btn-group'>
+        <li><%= link_to t('forem.topic.links.edit'), forem.edit_admin_forum_topic_path(@forum, @topic), :class => "btn" %></li>
+        <li><%= link_to t(".hide.#{@topic.hidden}"), forem.toggle_hide_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %></li>
+        <li><%= link_to t(".lock.#{@topic.locked}"), forem.toggle_lock_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %></li>
+        <li><%= link_to t(".pin.#{@topic.pinned}"), forem.toggle_pin_admin_forum_topic_path(@forum, @topic), :method => :put, :class => "btn" %></li>
+      </ul>
     <% end %>
   </div>
 
