@@ -8,7 +8,11 @@ describe Forem::Forum do
   end
 
   it "is scoped by default" do
-    Forem::Forum.all.to_sql.should =~ /ORDER BY \"forem_forums\".\"name\" ASC/
+    if ActiveRecord::Base.connection.class.to_s =~ /Mysql/
+      Forem::Forum.all.to_sql.should =~ /ORDER BY `forem_forums`.`position` ASC/
+    else
+      Forem::Forum.all.to_sql.should =~ /ORDER BY \"forem_forums\".\"position\" ASC/
+    end
   end
 
   describe "validations" do
@@ -25,6 +29,14 @@ describe Forem::Forum do
     it "requires a category id" do
       forum.category_id = nil
       forum.should_not be_valid
+    end
+  end
+
+  context "deletion" do
+    it "deletes views" do
+      FactoryGirl.create(:forum_view, :viewable => forum)
+      forum.destroy
+      Forem::View.exists?(:viewable_id => forum.id).should be_false
     end
   end
 

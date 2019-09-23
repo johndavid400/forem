@@ -110,7 +110,7 @@ Here's a comprehensive list of the features currently in Forem:
   * Pinning topics
 * Posts
   * Replying to topics
-  * Deleting own topics
+  * Deleting own posts
   * Blocking replies to locked topics
   * Editing posts
 * Text Formatting
@@ -184,17 +184,22 @@ We currently have support for the following languages:
 * Bulgarian
 * Chinese (Simplified, zh-CN)
 * Chinese (Traditional, zh-TW)
+* Czech
 * Dutch
 * English
+* Estonian
 * Farsi (Persian)
 * German
 * Italian
+* Japanese
+* Korean
+* Lithuanian
 * Polish
 * Portuguese (pt-PT)
 * Russian
+* Slovak
 * Spanish
-* Lithuanian
-* Japanese
+* Turkish
 
 Patches for new translations are very much welcome!
 
@@ -235,5 +240,6 @@ If all the tests are passing (they usually are), then you're good to go! Develop
 * [OrbsCCG](http://orbsccg.com/forums/)
 * [Airesis](http://www.airesis.eu)
 * [Lab Nation](https://www.lab-nation.com/forum/)
+* [INRTracker](http://www.inrtracker.com/community)
 
 If you want yours added here, just ask!

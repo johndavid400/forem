@@ -25,11 +25,11 @@ module Forem
 
     belongs_to :forum
     belongs_to :forem_user, :class_name => Forem.user_class.to_s, :foreign_key => :user_id
-    has_many   :subscriptions
+    has_many   :subscriptions, :dependent => :destroy
     has_many   :posts, -> { order "forem_posts.created_at ASC"}, :dependent => :destroy
     accepts_nested_attributes_for :posts
 
-    validates :subject, :presence => true
+    validates :subject, :presence => true, :length => { maximum: 255 }
     validates :user, :presence => true
 
     before_save  :set_first_post_user
