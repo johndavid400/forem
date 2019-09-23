@@ -1,0 +1,16 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Dummy
+    = stylesheet_link_tag :application
+    = javascript_include_tag :application
+    = csrf_meta_tags
+    = forem_atom_auto_discovery_link_tag
+  %body
+    - flash.each do |key, message|
+      %div{class: "flash #{key}"}= message
+    - if user_signed_in?
+      Signed in as #{forem_user.forem_name}
+      \#{link_to "Sign out", main_app.destroy_user_session_path, :method => :delete}
+    = yield

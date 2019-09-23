@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Forem
+    = stylesheet_link_tag    "forem", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "forem", "data-turbolinks-track" => true
+    = csrf_meta_tags
+    = forem_atom_auto_discovery_link_tag
+  %body
+    - flash.each do |k,v|
+      %div{class: "flash #{k}"}= v
+    = yield
