@@ -1,4 +1,4 @@
-class AddForem < ActiveRecord::Migration[4.2]
+class AddForem < ActiveRecord::Migration[6.0]
 
   def up
 
