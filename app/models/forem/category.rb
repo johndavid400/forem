@@ -15,5 +15,9 @@ module Forem
       name
     end
 
+    def self.find(id)
+      self.friendly.find(id)
+    end
+
   end
 end
