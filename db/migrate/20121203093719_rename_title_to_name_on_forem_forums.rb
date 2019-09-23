@@ -1,4 +1,4 @@
-class RenameTitleToNameOnForemForums < ActiveRecord::Migration
+class RenameTitleToNameOnForemForums < ActiveRecord::Migration[4.2]
   def up
     rename_column :forem_forums, :title, :name
   end

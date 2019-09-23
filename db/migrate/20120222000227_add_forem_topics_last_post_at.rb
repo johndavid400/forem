@@ -1,4 +1,4 @@
-class AddForemTopicsLastPostAt < ActiveRecord::Migration
+class AddForemTopicsLastPostAt < ActiveRecord::Migration[4.2]
   def up
     add_column :forem_topics, :last_post_at, :datetime
     Forem::Topic.reset_column_information

@@ -2,8 +2,8 @@ module Forem
   module Admin
     class BaseController < ApplicationController
       layout Forem.layout
-      
-      before_filter :authenticate_forem_admin
+
+      before_action :authenticate_forem_admin
 
       def index
         # TODO: perhaps gather some stats here to show on the admin page?

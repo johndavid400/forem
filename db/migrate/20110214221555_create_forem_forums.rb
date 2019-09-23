@@ -1,4 +1,4 @@
-class CreateForemForums < ActiveRecord::Migration
+class CreateForemForums < ActiveRecord::Migration[4.2]
   def up
     create_table :forem_forums do |t|
       t.string :title
