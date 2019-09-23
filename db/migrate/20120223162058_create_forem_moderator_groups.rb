@@ -1,4 +1,4 @@
-class CreateForemModeratorGroups < ActiveRecord::Migration
+class CreateForemModeratorGroups < ActiveRecord::Migration[4.2]
   def change
     create_table :forem_moderator_groups do |t|
       t.integer :forum_id

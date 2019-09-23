@@ -1,4 +1,4 @@
-class AddForemViewFields < ActiveRecord::Migration
+class AddForemViewFields < ActiveRecord::Migration[4.2]
   def up
     add_column :forem_views, :current_viewed_at, :datetime
     add_column :forem_views, :past_viewed_at, :datetime

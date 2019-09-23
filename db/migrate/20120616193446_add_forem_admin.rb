@@ -1,4 +1,4 @@
-class AddForemAdmin < ActiveRecord::Migration
+class AddForemAdmin < ActiveRecord::Migration[4.2]
   def change
     unless column_exists?(user_class, :forem_admin)
       add_column user_class, :forem_admin, :boolean, :default => false

@@ -1,4 +1,4 @@
-class AddForemAutoSubscribe < ActiveRecord::Migration
+class AddForemAutoSubscribe < ActiveRecord::Migration[4.2]
   def change
     unless column_exists?(user_class, :forem_auto_subscribe)
       add_column user_class, :forem_auto_subscribe, :boolean, :default => false
