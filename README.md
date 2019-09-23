@@ -1,9 +1,24 @@
+## No longer maintained
+
+**I put the word out for people to contact me if they'd like to maintain this for me. Quite a few people contacted me, and I added those people as maintainers. No further work got done.**
+
+**Therefore, I have no choice but to mark this project as unmaintained. I have removed all other maintainers as a result.**
+
+**This project is no longer accepting pull requests or issues.**
+
+If you would like a better maintained forum system, please use [Thredded](https://github.com/thredded/thredded).
+
+----
+
+
 ![Forem - using Bootstrap](https://raw.githubusercontent.com/radar/forem/rails4/doc/theme.png)
 
 *Forem, using the forem-bootstrap theme*
 
-# Forem [![Build status](https://api.travis-ci.org/radar/forem.png)](https://travis-ci.org/radar/forem)
+# Forem [![Build Status](https://travis-ci.org/rubysherpas/forem.svg)](https://travis-ci.org/rubysherpas/forem)
 *"NO U!"*
+
+
 
 Forem is an engine for Rails that aims to be the best little forum system ever.
 The end goal is to have an engine that can be dropped into an application that
@@ -110,7 +125,7 @@ Here's a comprehensive list of the features currently in Forem:
   * Pinning topics
 * Posts
   * Replying to topics
-  * Deleting own topics
+  * Deleting own posts
   * Blocking replies to locked topics
   * Editing posts
 * Text Formatting
@@ -180,21 +195,27 @@ The exact same format can be used to redefine an existing method.
 
 We currently have support for the following languages:
 
+* Arabic
 * Brazillian (pt-BR)
 * Bulgarian
 * Chinese (Simplified, zh-CN)
 * Chinese (Traditional, zh-TW)
+* Czech
 * Dutch
 * English
+* Estonian
 * Farsi (Persian)
 * German
 * Italian
+* Japanese
+* Korean
+* Lithuanian
 * Polish
 * Portuguese (pt-PT)
 * Russian
+* Slovak
 * Spanish
-* Lithuanian
-* Japanese
+* Turkish
 
 Patches for new translations are very much welcome!
 
@@ -235,5 +256,6 @@ If all the tests are passing (they usually are), then you're good to go! Develop
 * [OrbsCCG](http://orbsccg.com/forums/)
 * [Airesis](http://www.airesis.eu)
 * [Lab Nation](https://www.lab-nation.com/forum/)
+* [INRTracker](http://www.inrtracker.com/community)
 
 If you want yours added here, just ask!

@@ -5,18 +5,7 @@ module Forem
     include Forem::Concerns::Viewable
     include Forem::Concerns::NilUser
     include Workflow
-
-    workflow_column :state
-    workflow do
-      state :pending_review do
-        event :spam,    :transitions_to => :spam
-        event :approve, :transitions_to => :approved
-      end
-      state :spam
-      state :approved do
-        event :approve, :transitions_to => :approved
-      end
-    end
+    include Forem::StateWorkflow
 
     attr_accessor :moderation_option
 
@@ -25,11 +14,11 @@ module Forem
 
     belongs_to :forum
     belongs_to :forem_user, :class_name => Forem.user_class.to_s, :foreign_key => :user_id
-    has_many   :subscriptions
+    has_many   :subscriptions, :dependent => :destroy
     has_many   :posts, -> { order "forem_posts.created_at ASC"}, :dependent => :destroy
     accepts_nested_attributes_for :posts
 
-    validates :subject, :presence => true
+    validates :subject, :presence => true, :length => { maximum: 255 }
     validates :user, :presence => true
 
     before_save  :set_first_post_user
