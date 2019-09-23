@@ -52,7 +52,7 @@ class AddForem < ActiveRecord::Migration[4.2]
       t.datetime :past_viewed_at
     end
 
-    if ActiveRecord::Base.connection.data_source_exists? 'forem_forums'
+    if ActiveRecord::Base.connection.data_source_exists? 'forem_categories'
       add_column :forem_categories, :position, :integer, default: 0
     else
       create_table :forem_categories do |t|
